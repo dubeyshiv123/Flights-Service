@@ -48,7 +48,7 @@ async function getAirplane(id) {
       );
     }
     throw new AppError(
-      "Cannot fetch data of all the airplanes",
+      "Cannot fetch data of the given airplane id",
       StatusCodes.INTERNAL_SERVER_ERROR
     );
   }
@@ -66,7 +66,25 @@ async function destroyAirplane(id) {
       );
     }
     throw new AppError(
-      "Cannot fetch data of all the airplanes",
+      "Cannot delete data of the given airplane id",
+      StatusCodes.INTERNAL_SERVER_ERROR
+    );
+  }
+}
+
+async function updateAirplane(id, data) {
+  try {
+    const response = await airplaneRepository.update(id, data);
+    return response;
+  } catch (error) {
+    if (error.statusCode == StatusCodes.NOT_FOUND) {
+      throw new AppError(
+        "The airplane you requested to update is not present",
+        error.statusCode
+      );
+    }
+    throw new AppError(
+      "Cannot update data of the given airplane id",
       StatusCodes.INTERNAL_SERVER_ERROR
     );
   }
@@ -77,4 +95,5 @@ module.exports = {
   getAirplanes,
   getAirplane,
   destroyAirplane,
+  updateAirplane,
 };
