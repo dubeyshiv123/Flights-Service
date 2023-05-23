@@ -33,7 +33,7 @@ async function getAirplanes(req, res) {
 }
 
 /**
- * POST : /airplane/:id
+ * POST : /airplanes/:id
  * req-body {}
  */
 async function getAirplane(req, res) {
@@ -48,7 +48,7 @@ async function getAirplane(req, res) {
 }
 
 /**
- * DELETE : /airplane/:id
+ * DELETE : /airplanes/:id
  * req-body {}
  */
 async function destroyAirplane(req, res) {
@@ -63,7 +63,7 @@ async function destroyAirplane(req, res) {
 }
 
 /**
- * PATCH : /airplane/:id
+ * PATCH : /airplanes/:id
  * req-body {}
  */
 async function updateAirplane(req, res) {

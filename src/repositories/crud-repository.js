@@ -20,7 +20,7 @@ class CrudRepository {
     });
     if (!response) {
       throw new AppError(
-        "Not able to find the resource",
+        "Not able to delete the resource",
         StatusCodes.NOT_FOUND
       );
     }
