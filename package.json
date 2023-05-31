@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx nodemon src/index.js"
   },
-  "author": "Sanket",
+  "author": "Sahil",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
